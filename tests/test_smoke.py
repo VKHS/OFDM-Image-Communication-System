@@ -29,6 +29,10 @@ class TestOFDM(unittest.TestCase):
                     self.assertLess(r["evm_rms"], 1e-12)
                     np.testing.assert_array_equal(r["bits"], self.bits)
 
+    def test_256qam_supplementary_noiseless(self):
+        r = transmit_receive(self.bits, "256QAM", 64, float("inf"))
+        np.testing.assert_array_equal(r["bits"], self.bits)
+
     def test_cp_off_and_on(self):
         for cp in (0, 4, 16):
             r = transmit_receive(self.bits, "16QAM", 64, float("inf"), cp_len=cp)
