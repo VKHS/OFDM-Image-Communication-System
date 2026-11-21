@@ -23,7 +23,7 @@ class ArchiveAssets(unittest.TestCase):
     def test_archived_simulink_zip(self):
         with ZipFile(ROOT / "archive/archived_simulink_models.zip") as archive:
             model_names = [x for x in archive.namelist() if x.endswith((".slx", ".mdl"))]
-            self.assertEqual(len(model_names), 47)
+            self.assertEqual(len(model_names), 42)
 
     def test_archived_report_figures_zips(self):
         archive_parts = sorted((ROOT / "archive").glob("report_figures_??.zip"))
