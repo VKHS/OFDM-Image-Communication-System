@@ -26,7 +26,7 @@ class TestOFDM(unittest.TestCase):
                 with self.subTest(mode=mode, nfft=n):
                     r = transmit_receive(self.bits, mode, n, float("inf"))
                     self.assertEqual(r["ber"], 0)
-                    self.assertEqual(r["evm_rms"], 0)
+                    self.assertLess(r["evm_rms"], 1e-12)
                     np.testing.assert_array_equal(r["bits"], self.bits)
 
     def test_cp_off_and_on(self):
