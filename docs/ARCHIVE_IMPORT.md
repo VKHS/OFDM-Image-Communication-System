@@ -1,26 +1,25 @@
-# Bringing the full historical source package into a local checkout
+# Imported original assets and extraction guide
 
-**Author: Vahab Khalili.**
+**Project author: Vahab Khalili.**
 
-The earlier consolidated project package contains archived MATLAB/Simulink models, MATLAB scripts, source images, source-inventory records, 400+ indexed figure assets and a figure atlas. **Those binary assets were not uploaded by the initial GitHub connection update.** This document makes the missing import explicit rather than linking nonexistent repository files.
+The original source files are now preserved directly inside the GitHub repository:
 
-## Suggested permanent directory locations
+- [Historical Lena and OFDM results (80 JPG)](../figures/historical/image_outputs)
+- [Browsable result matrix](HISTORICAL_RESULTS.md)
+- [Original image inputs](../assets/input_images)
+- [Original MATLAB scripts](../matlab/legacy)
+- [42 Simulink/legacy models plus five support files](../archive/archived_simulink_models.zip)
+- [155 original extracted report images: parts 01–06](../archive)
+- [49 supplementary design/reference outputs in one ZIP](../archive/new_design_and_recomputed_figures.zip)
+- [Model inventory](../models/MODEL_INVENTORY.csv)
+- [Figure inventory](../figures/ARCHIVED_FIGURE_INDEX.csv)
 
-```text
-archive/
-  models/            MATLAB/Simulink .slx and .mdl files
-  matlab/            Original .m scripts
-  inputs/            Sample input images / .mat data
-  historical_figures/ Saved reconstruction and BER figures
-  figure_atlas/      PDF atlas and original image media
+To unpack the models from the repository root:
+
+```bash
+python -m zipfile -e archive/archived_simulink_models.zip .
 ```
 
-The source ZIP provided separately with the project can be extracted locally, with the corresponding model and figure directories transferred into these destinations. Keep the archival model content byte-for-byte unchanged and record SHA-256 checksums for each file. Do not convert a screenshot to a fictional HDL source or represent a legacy model as having passed GitHub CI.
+Extract report_figures_01.zip through report_figures_06.zip in the same way to restore the report_figures folder. The larger offline master ZIP additionally preserves embedded EMF report media and a PDF atlas.
 
-## Large-file considerations
-
-If the archive is committed to Git, GitHub recommends keeping individual files well below its hard per-file limit. For large media assets, Git LFS is preferable. Avoid committing caches or duplicate output archives alongside their extracted contents.
-
-## Verification separation
-
-The numerical reference tests in `tests/` continue to run without MATLAB or the historical bundle. A separate MATLAB CI job should be enabled only where licenses, MATLAB releases, and model preload requirements have been confirmed.
+Note that GitHub import establishes preservation, **not** reproducible execution of historical MATLAB/Simulink models. The new Python reference has separate CI and the newly authored MATLAB reference has not been executed in this environment.

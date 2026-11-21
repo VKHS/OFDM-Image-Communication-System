@@ -8,6 +8,16 @@ A documented, reproducible investigation of image transmission over orthogonal f
 
 ![Full OFDM link](figures/system.svg)
 
+## Original Lena and image-reconstruction results
+
+| Lena source | Archived reconstruction | Archived 16-QAM result |
+|---|---|---|
+| <img src="assets/input_images/lenna.png" width="190" alt="Original Lena test image"/> | <img src="figures/historical/image_outputs/set_01_lena_out.jpg" width="190" alt="Archived reconstruction"/> | <img src="figures/historical/image_outputs/result_16QAM-SNR15-N16.jpg" width="190" alt="Archived 16-QAM reconstruction"/> |
+
+**[Browse the full 80-image Lena, BER and OFDM output gallery](docs/HISTORICAL_RESULTS.md).** Historical image results are kept separate from newly computed reference results.
+
+![Original reported BER figure](figures/historical/image_outputs/result_BER_nfft_16.jpg)
+
 ## Start here
 
 1. Read the [full system architecture](docs/ARCHITECTURE.md), [signal mathematics](docs/MATHEMATICS.md), and [serial FFT hardware](docs/STREAMING_FFT.md).
@@ -42,7 +52,17 @@ The numerical reference intentionally holds source bits and measured waveform SN
 
 ## Figures
 
-The [figure index](figures/README.md) links to editable vector schematics and describes the historical plots. Original high-resolution MATLAB/Simulink plots, output images and archived models are available in the consolidated source package supplied separately with this project; **they are not all present in this GitHub tree**. The documentation never treats the archived screenshots as newly reproduced measurements.
+The original saved figures are now **committed to GitHub**. See the [80-image historic gallery](docs/HISTORICAL_RESULTS.md), [13 numbered new design diagrams](figures/new_design), [numerical-reference BER/EVM plots](figures/reference_results), [original MATLAB scripts](matlab/legacy), [original model ZIP](archive/archived_simulink_models.zip), [six ZIPs of 155 archived report figures](archive), and [the full figure index](figures/ARCHIVED_FIGURE_INDEX.csv). The historical results were preserved, not rerun.
+
+### Run MATLAB simulations and produce figures
+
+```matlab
+addpath('matlab');
+test_smoke();
+T = run_full_suite('assets/input_images/lenna.png','results/matlab');
+```
+
+This new MATLAB sweep saves **63 image reconstructions**, a BER/EVM CSV, BER plots and a comparison gallery. Original historical scripts are available separately in [matlab/legacy](matlab/legacy).
 
 ## Repository organization
 

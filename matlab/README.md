@@ -22,7 +22,7 @@ T = run_full_suite('assets/input_images/lenna.png','results/matlab');
 
 Without the separately supplied original image, `run_full_suite()` generates a deterministic synthetic input and executes all scenarios. The suite saves `63` images (3 modulation schemes × 3 FFT sizes × 7 sample-domain SNR levels), as well as the `case_metrics.csv`, `BER_sweep.png`, and `image_gallery.png`. These are generated **when MATLAB is run**; they are not represented as committed historical results.
 
-The original **16 MATLAB .m files**, an additional .asv backup, and original Simulink models remain in the separately supplied [full consolidated archive](../docs/ARCHIVE_IMPORT.md). They are not silently rewritten or claimed to be in GitHub. A MATLAB installation is not available in this working session, so the code is authored and reviewed but has not been executed here.
+The **original 16 MATLAB .m files and two .asv support files are now preserved in [matlab/legacy](legacy)**; the original 42 model files are contained in [the versioned Simulink archive](../archive/archived_simulink_models.zip). The new MATLAB reference and sweep code have not been executed here because MATLAB is not available in this environment.
 
 ## Historical image inputs
 

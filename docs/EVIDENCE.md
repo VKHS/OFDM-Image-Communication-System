@@ -28,7 +28,7 @@ Historical files should not be silently claimed as re-executed. An archived PDF 
 
 ## Limits of this GitHub copy
 
-This initial GitHub tree includes original-project documentation, editable vector overview figures, runnable numerical code and CI. The large standalone MATLAB/Simulink/figure package is not implicitly imported into GitHub. In particular, it must not be described as version-controlled here until the corresponding files have actually been uploaded.
+The repository now includes 80 original JPG outputs individually, 155 extracted report figures in six ZIP bundles, original Lena input assets, 16 preserved MATLAB scripts plus two support backups, 42 primary Simulink models in a 47-file ZIP, and a full set of source design figures, Python/MATLAB references, and model/figure indexes. The full offline master archive additionally includes embedded EMF media and a PDF figure atlas not individually published here. Imported models were **not rerun** as a consequence of upload; GitHub smoke tests verify file availability and the independent numerical reference, not original Simulink behavior.
 
 ## Authorship
 
