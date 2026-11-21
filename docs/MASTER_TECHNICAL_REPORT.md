@@ -351,7 +351,7 @@ The reference verifies that **all 9 combinations** of QPSK/16-PSK/16-QAM and FFT
 
 **Figure 12.** Independently recomputed baseband BER curves, with every image bit retained and measured time-domain sample-power normalization. A zero-error estimate is plotted with a finite sample-count floor; the actual BER values including zeros are stored in the CSV file.
 
-![New reference reconstruction and constellation scatter](../figures/reference_results/reference_reconstruction_and_constellations.svg)
+![New reference reconstruction and constellation scatter](../figures/reference_results/reference_reconstruction_and_constellations.png)
 
 **Figure 13.** Independently computed image recovery and constellation scatter at actual normalized 12 dB sample-domain SNR for a 64-point transform.
 
