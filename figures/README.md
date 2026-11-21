@@ -1,11 +1,17 @@
-# Project figures — editable SVG
+# Figure gallery
 
 **Author: Vahab Khalili.**
 
-The SVGs in this directory are text-based, scalable diagrams rendered directly by GitHub:
+All figures in this GitHub directory are hand-authored **conceptual vector diagrams**, not experimental screenshots. They are intentionally editable and GitHub-renderable.
 
-1. [System-level OFDM transceiver](system.svg) — byte input, modulation, OFDM, channel, receiver and reference BER.
-2. [Four design domains](domains.svg) — modular architecture and verification boundaries.
-3. [Streaming radix-2 transform](streaming_fft.svg) — butterflies, delay units and twiddle/reordering control.
+| Figure | Description |
+|---|---|
+| [System-level transceiver](system.svg) | End-to-end image → OFDM → channel → recovery |
+| [Four design domains](domains.svg) | Relationship between source, FFT, channel and verification |
+| [Streaming radix-2 pipeline](streaming_fft.svg) | Reused butterflies with 8/4/2/1 feedback delays |
+| [Radix-2 DIF butterfly](butterfly.svg) | Complex arithmetic, twiddle multiplication |
+| [OFDM framing and cyclic prefix](cyclic_prefix.svg) | 48 occupied / 64 FFT / 16 prefix → 80 complex samples |
+| [Ideal constellations](constellations.svg) | QPSK, 16-PSK and square 16-QAM |
+| [Quadrature RF path](quadrature_rf.svg) | I/Q modulation, carrier, coherent receiver |
 
-These drawings are *new conceptual schematics* distilled from the project specification; they are **not extracted measurement screenshots**. The consolidated standalone archive includes the larger historical figure atlas, MATLAB plots, reconstruction images, and editable source diagrams. It must be uploaded separately before those binaries can be linked as repository-local resources.
+The separately supplied complete project archive contains historical simulation images, MATLAB plots and the larger atlas. They are not asserted to be present in this GitHub tree until actually uploaded.
