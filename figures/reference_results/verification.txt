@@ -1,0 +1,2 @@
+PASS: all 9 modulation/transform combinations recovered every input bit in the noise-free complex-baseband reference.
+The original historical Simulink and RF cases have not been rerun.

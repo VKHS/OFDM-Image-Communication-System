@@ -1,0 +1,16 @@
+digraph X {graph [bgcolor="white",ranksep="0.7",nodesep="0.25",fontname="DejaVu Sans",fontsize="12",pad="0.3",splines="ortho"]; node [fontname="DejaVu Sans",fontcolor="#17314E",fontsize="10",shape="box",style="rounded,filled",color="#CAD7E0",fillcolor="#EAF2F7",margin="0.14,0.08"]; edge [color="#5C6A76",arrowsize="0.65",penwidth="1.2",fontname="DejaVu Sans",fontsize="9"]; rankdir=LR;
+ im[label="RGB / grayscale image
+pixel values 0...255"];
+ by[label="Byte vector
+(e.g. 173)"];
+ bits[label="MSB-first bits
+10101101"];
+ q[label="QPSK: 10 | 10 | 11 | 01
+4 symbols / 8-bit value",fillcolor="#D9EAF2"];
+ p[label="16-PSK or 16-QAM
+1010 | 1101
+2 symbols / 8-bit value",fillcolor="#E8E0F4"];
+ post[label="Demap --> regroup 8 bits
+--> restore original array",fillcolor="#F6ECD6"];
+ im->by->bits;bits->q;bits->p;q->post;p->post;
+}

@@ -1,0 +1,15 @@
+digraph X {graph [bgcolor="white",ranksep="0.7",nodesep="0.25",fontname="DejaVu Sans",fontsize="12",pad="0.3",splines="ortho"]; node [fontname="DejaVu Sans",fontcolor="#17314E",fontsize="10",shape="box",style="rounded,filled",color="#CAD7E0",fillcolor="#EAF2F7",margin="0.14,0.08"]; edge [color="#5C6A76",arrowsize="0.65",penwidth="1.2",fontname="DejaVu Sans",fontsize="9"]; rankdir=TB;
+ a[label="Level 1: Bit-packing inverse
+identical original and reconstructed byte vectors",fillcolor="#E6F4EF"];
+ b[label="Level 2: Numerical FFT/IFFT
+max|FFT(IFFT(X)) - X| within tolerance",fillcolor="#E6F4EF"];
+ c[label="Level 3: Noiseless end-to-end link
+BER = 0; reconstructed image exact",fillcolor="#E6F4EF"];
+ d[label="Level 4: AWGN and precision sweeps
+measured signal power; BER; EVM; PSNR",fillcolor="#F6ECD6"];
+ e[label="Level 5: Cycle-accurate serial verification
+stage timing, ordering, latency, overflow",fillcolor="#F6ECD6"];
+ f[label="Level 6: Synthesized / measured hardware
+resources, timing, frequency, power",fillcolor="#EEE7F6"];
+ a->b->c->d->e->f;
+}

@@ -1,0 +1,12 @@
+digraph X {graph [bgcolor="white",ranksep="0.7",nodesep="0.25",fontname="DejaVu Sans",fontsize="12",pad="0.3",splines="ortho"]; node [fontname="DejaVu Sans",fontcolor="#17314E",fontsize="10",shape="box",style="rounded,filled",color="#CAD7E0",fillcolor="#EAF2F7",margin="0.14,0.08"]; edge [color="#5C6A76",arrowsize="0.65",penwidth="1.2",fontname="DejaVu Sans",fontsize="9"]; rankdir=TB;
+ tx[label="IFFT output x[n] = I[n] + jQ[n]",fillcolor="#D9EAF2"];
+ split[label="Separate I / Q"]; tx->split;
+ a[label="I DAC / hold"];b[label="Q DAC / hold"];split->a;split->b;
+ c[label="× cos(2πfct)"];d[label="× sin(2πfct)"];a->c;b->d;
+ sum[label="Sum real RF waveform
+s(t) = I(t)cos + Q(t)sin",fillcolor="#F6ECD6"];c->sum;d->sum;
+ chan[label="RF channel + Gaussian noise"];sum->chan;
+ mix[label="Coherent I / Q downconversion"];chan->mix;
+ filt[label="Low-pass filtering and sampling"];mix->filt;
+ recomb[label="I + jQ --> FFT --> decisions",fillcolor="#D9EAF2"];filt->recomb;
+}

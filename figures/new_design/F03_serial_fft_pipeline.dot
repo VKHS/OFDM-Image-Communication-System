@@ -1,0 +1,22 @@
+digraph X {graph [bgcolor="white",ranksep="0.7",nodesep="0.25",fontname="DejaVu Sans",fontsize="12",pad="0.3",splines="ortho"]; node [fontname="DejaVu Sans",fontcolor="#17314E",fontsize="10",shape="box",style="rounded,filled",color="#CAD7E0",fillcolor="#EAF2F7",margin="0.14,0.08"]; edge [color="#5C6A76",arrowsize="0.65",penwidth="1.2",fontname="DejaVu Sans",fontsize="9"]; rankdir=LR;
+ in[label="1 complex sample / cycle",fillcolor="#E6F4EF"];
+ s1[label="Stage 1
+Delay 8
+Butterfly + W",fillcolor="#D9EAF2"];
+ s2[label="Stage 2
+Delay 4
+Butterfly + W",fillcolor="#D9EAF2"];
+ s3[label="Stage 3
+Delay 2
+Butterfly + W",fillcolor="#D9EAF2"];
+ s4[label="Stage 4
+Delay 1
+Butterfly + W",fillcolor="#D9EAF2"];
+ order[label="Reorder / output alignment",fillcolor="#F6ECD6"];
+ out[label="1 complex result / cycle
+after pipeline fill",fillcolor="#E6F4EF"];
+ in->s1->s2->s3->s4->order->out;
+ ctrl[label="Counter + stage switching
+and coefficient address",fillcolor="#EEE7F6",color="#7754A6"];
+ ctrl->s1[style=dashed];ctrl->s2[style=dashed];ctrl->s3[style=dashed];ctrl->s4[style=dashed];
+}

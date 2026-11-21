@@ -1,0 +1,10 @@
+digraph X {graph [bgcolor="white",ranksep="0.7",nodesep="0.25",fontname="DejaVu Sans",fontsize="12",pad="0.3",splines="ortho"]; node [fontname="DejaVu Sans",fontcolor="#17314E",fontsize="10",shape="box",style="rounded,filled",color="#CAD7E0",fillcolor="#EAF2F7",margin="0.14,0.08"]; edge [color="#5C6A76",arrowsize="0.65",penwidth="1.2",fontname="DejaVu Sans",fontsize="9"]; rankdir=LR;
+ a[label="Archive contains simulations, images,
+FFT screenshots, and scripts",fillcolor="#D9EAF2"];
+ b[label="Demonstrates communication behavior
+and architecture concepts",fillcolor="#E6F4EF"];
+ c[label="Does NOT by itself establish
+full system FPGA deployment,
+physical power, or bit-exact RTL",fillcolor="#F8E2DF",color="#AD3B3B"];
+ a->b->c;
+}

@@ -1,0 +1,11 @@
+digraph X { graph [bgcolor="white",ranksep="0.7",nodesep="0.25",fontname="DejaVu Sans",fontsize="12",pad="0.3",splines="ortho"]; node [fontname="DejaVu Sans",fontcolor="#17314E",fontsize="10",shape="box",style="rounded,filled",color="#CAD7E0",fillcolor="#EAF2F7",margin="0.14,0.08"]; edge [color="#5C6A76",arrowsize="0.65",penwidth="1.2",fontname="DejaVu Sans",fontsize="9"]; rankdir=LR;
+ subgraph cluster_0 {label="DATA & MAPPING";color="#DBE9EF";a[label="Source image"];b[label="Byte / bit serializer"];c[label="QPSK / 16-PSK / 16-QAM"];a->b->c;}
+ subgraph cluster_1 {label="OFDM TRANSMITTER";color="#DBE9EF";d[label="Group N symbols
++ optional null bins"];e[label="N-point IFFT"];f[label="Append cyclic prefix
+(if enabled)"];d->e->f;}
+ subgraph cluster_2 {label="PHYSICAL / CHANNEL MODEL";color="#DBE9EF";g[label="Complex baseband
+or I/Q DAC + RF"];h[label="AWGN; optional
+quantization / nonidealities"];g->h;}
+ subgraph cluster_3 {label="OFDM RECEIVER";color="#DBE9EF";i[label="Recover I/Q samples"];j[label="Remove prefix"];k[label="N-point FFT"];l[label="Extract occupied bins"];i->j->k->l;}
+ subgraph cluster_4 {label="DATA & EVALUATION";color="#DBE9EF";m[label="Constellation decisions"];n[label="Bit / byte unpacking"];o[label="Recovered image"];p[label="BER / EVM / image quality",fillcolor="#E9F4EC",color="#26805B"];m->n->o;n->p;}
+ c->d;f->g;h->i;l->m;b->p[style=dashed,label="reference bits"];}

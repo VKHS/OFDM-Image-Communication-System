@@ -1,0 +1,18 @@
+digraph X {graph [bgcolor="white",ranksep="0.7",nodesep="0.25",fontname="DejaVu Sans",fontsize="12",pad="0.3",splines="ortho"]; node [fontname="DejaVu Sans",fontcolor="#17314E",fontsize="10",shape="box",style="rounded,filled",color="#CAD7E0",fillcolor="#EAF2F7",margin="0.14,0.08"]; edge [color="#5C6A76",arrowsize="0.65",penwidth="1.2",fontname="DejaVu Sans",fontsize="9"]; rankdir=LR; node [shape=box];
+ x0[label="Arriving sample a
+(or delayed prior sample)"];
+ x1[label="Arriving sample b
+(or feedback data)"];
+ plus[label="Complex add
+u = a + b",fillcolor="#D9EAF2"];
+ minus[label="Complex subtract
+d = a - b",fillcolor="#D9EAF2"];
+ tw[label="Twiddle multiply
+v = d · W(k,N)",fillcolor="#E8E0F4"];
+ mem[label="Delay / feedback
+and bypass switching",fillcolor="#F6ECD6"];
+ x0->plus;x1->plus;x0->minus;x1->minus;minus->tw;plus->mem;tw->mem;
+ counter[label="Cycle counter
+stage / twiddle controls",fillcolor="#EEE7F6"];
+ counter->mem[style=dashed];counter->tw[style=dashed];
+}
