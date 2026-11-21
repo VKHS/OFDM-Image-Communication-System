@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ofdm-image-communication-system"
+version = "0.1.0"
+description = "Reproducible OFDM image communication reference and serial FFT documentation"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.24,<3"]
+authors = [{name = "Vahab Khalili"}]
+
+[project.scripts]
+ofdm-image = "ofdm_image.cli:main"
+
+[tool.setuptools]
+packages = ["ofdm_image"]
